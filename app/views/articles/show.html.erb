@@ -1,0 +1,24 @@
+
+<h1 class = "text-center mt-5">Showing article</h1>
+  <div class = "container mt-3" >
+      <div class = "row justify-content-md-center" >
+        <div class = "col-8 mt-3" >
+          <div class="card text-center shadow  mb-5 bg-white rounded">
+            <div class="card-header">
+              @By JM
+            </div>
+            <div class="card-body">
+              <h5  class="card-title"><%= @article.name  %></h5>
+              <p class="card-text text-left"><%= simple_format(@article.description) %></p>
+              <%= link_to 'Edit', edit_article_path(@article), class: "btn btn-success" %>
+              <%= link_to 'Delete', article_path(@article), method: :delete, data: {confirm: "Are you sure you want to destroy this article?"}, class: "btn btn-danger" %>
+            </div>
+            <div class="card-footer text-muted">
+                <small> <%= time_ago_in_words(@article.created_at) %>  Created ago,
+                  <%= time_ago_in_words(@article.updated_at) %> Updated ago
+                </small>
+            </div>
+          </div>
+        </div>
+      </div>
+  </div>
