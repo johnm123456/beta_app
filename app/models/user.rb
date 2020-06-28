@@ -10,4 +10,5 @@
             uniqueness: { case_sensitive: false },
             length: { maximum: 50 },
             format: { with: VALID_SAVE_FORMAT_FOR_EMAIL }
+  has_secure_password
  end
